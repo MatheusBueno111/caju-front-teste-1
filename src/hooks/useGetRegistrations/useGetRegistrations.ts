@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { getRegistrations } from "~/services/registrationFetchers";
 
-export const useGetRegistrations = () => {
+export const useGetRegistrations = (search?: string) => {
   const { data: registrations } = useQuery({
-    queryKey: ["registrations"],
-    queryFn: getRegistrations,
+    queryKey: ["registrations", search],
+    queryFn: () => getRegistrations(search),
   });
 
   return {
