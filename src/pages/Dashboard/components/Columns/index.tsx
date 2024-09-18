@@ -1,5 +1,6 @@
 import * as S from "./styles";
 import RegistrationCard from "../RegistrationCard";
+import { Registration } from "~/types";
 
 const allColumns = [
   { status: "REVIEW", title: "Pronto para revisar" },
@@ -7,10 +8,11 @@ const allColumns = [
   { status: "REPROVED", title: "Reprovado" },
 ];
 
-type Props = {
-  registrations?: any[];
-};
-const Collumns = (props: Props) => {
+interface CollumnsProps {
+  registrations: Registration[];
+}
+
+const Collumns = ({ registrations }: CollumnsProps) => {
   return (
     <S.Container>
       {allColumns.map((collum) => {
@@ -21,11 +23,11 @@ const Collumns = (props: Props) => {
                 {collum.title}
               </S.TitleColumn>
               <S.CollumContent>
-                {props?.registrations?.map((registration) => {
+                {registrations?.map((registration) => {
                   if (registration.status === collum.status) {
                     return (
                       <RegistrationCard
-                        data={registration}
+                        registration={registration}
                         key={registration.id}
                       />
                     );
