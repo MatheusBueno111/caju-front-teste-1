@@ -3,10 +3,11 @@ import * as S from "./styles";
 import { SearchBar } from "./components/Searchbar";
 import { useGetRegistrations } from "~/hooks/useGetRegistrations/useGetRegistrations";
 import { useState } from "react";
+import { cpfRemoveMask } from "~/utils/cpfRemoveMask";
 
 const DashboardPage = () => {
   const [search, setSearch] = useState("");
-  const { registrations } = useGetRegistrations(search);
+  const { registrations } = useGetRegistrations(cpfRemoveMask(search));
 
   const handleSearch = (value: string) => {
     setSearch(value);
