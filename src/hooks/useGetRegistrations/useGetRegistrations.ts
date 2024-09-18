@@ -5,6 +5,9 @@ export const useGetRegistrations = (search?: string) => {
   const { data: registrations } = useQuery({
     queryKey: ["registrations", search],
     queryFn: () => getRegistrations(search),
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+    staleTime: Infinity,
   });
 
   return {
