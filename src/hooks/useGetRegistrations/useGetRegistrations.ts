@@ -2,7 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import { getRegistrations } from "~/services/registrationFetchers";
 
 export const useGetRegistrations = (search?: string) => {
-  const { data: registrations } = useQuery({
+  const {
+    data: registrations,
+    isRefetching: isRefetchingRegistrations,
+    isLoading: isLoadingRegistrations,
+  } = useQuery({
     queryKey: ["registrations", search],
     queryFn: () => getRegistrations(search),
     refetchOnWindowFocus: false,
@@ -12,5 +16,7 @@ export const useGetRegistrations = (search?: string) => {
 
   return {
     registrations,
+    isRefetchingRegistrations,
+    isLoadingRegistrations,
   };
 };

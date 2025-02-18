@@ -1,6 +1,7 @@
 import * as S from "./styles";
 import RegistrationCard from "../RegistrationCard";
-import { Registration } from "~/types";
+import { Skeleton } from "~/components/Skeleton";
+import { type CollumnsProps } from "./types";
 
 const allColumns = [
   { status: "REVIEW", title: "Pronto para revisar" },
@@ -8,11 +9,7 @@ const allColumns = [
   { status: "REPROVED", title: "Reprovado" },
 ];
 
-interface CollumnsProps {
-  registrations: Registration[];
-}
-
-const Collumns = ({ registrations }: CollumnsProps) => {
+const Collumns = ({ registrations, isLoading }: CollumnsProps) => {
   return (
     <S.Container>
       {allColumns.map((collum) => {
@@ -23,16 +20,18 @@ const Collumns = ({ registrations }: CollumnsProps) => {
                 {collum.title}
               </S.TitleColumn>
               <S.CollumContent>
-                {registrations?.map((registration) => {
-                  if (registration.status === collum.status) {
-                    return (
+                {isLoading ? (
+                  <Skeleton quantity={2} />
+                ) : (
+                  registrations?.map((registration) =>
+                    registration.status === collum.status ? (
                       <RegistrationCard
                         registration={registration}
                         key={registration.id}
                       />
-                    );
-                  }
-                })}
+                    ) : null
+                  )
+                )}
               </S.CollumContent>
             </>
           </S.Column>

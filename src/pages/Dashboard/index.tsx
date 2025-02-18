@@ -7,7 +7,8 @@ import { cpfRemoveMask } from "~/utils/cpfRemoveMask";
 
 const DashboardPage = () => {
   const [search, setSearch] = useState("");
-  const { registrations } = useGetRegistrations(cpfRemoveMask(search));
+  const { registrations, isLoadingRegistrations, isRefetchingRegistrations } =
+    useGetRegistrations(cpfRemoveMask(search));
 
   const handleSearch = (value: string) => {
     setSearch(value);
@@ -16,7 +17,10 @@ const DashboardPage = () => {
   return (
     <S.Container>
       <SearchBar handleSearch={handleSearch} search={search} />
-      <Collumns registrations={registrations} />
+      <Collumns
+        registrations={registrations}
+        isLoading={isLoadingRegistrations || isRefetchingRegistrations}
+      />
     </S.Container>
   );
 };
