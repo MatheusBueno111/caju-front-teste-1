@@ -1,4 +1,4 @@
-import TextField from "~/components/TextField";
+import { TextField } from "~/components/TextField";
 import * as S from "./styles";
 import Button from "~/components/Buttons";
 import { HiOutlineArrowLeft } from "react-icons/hi";

@@ -1,10 +1,5 @@
 import * as S from "./styles";
-
-interface SkeletonProps {
-  quantity: number;
-  width?: string;
-  height?: string;
-}
+import { SkeletonProps } from "./types";
 
 export const Skeleton: React.FC<SkeletonProps> = ({
   quantity,

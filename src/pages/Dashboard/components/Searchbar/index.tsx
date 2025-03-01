@@ -2,7 +2,7 @@ import { HiRefresh } from "react-icons/hi";
 import { useHistory } from "react-router-dom";
 import { IconButton } from "~/components/Buttons/IconButton";
 import Button from "~/components/Buttons";
-import TextField from "~/components/TextField";
+import { TextField } from "~/components/TextField";
 import routes from "~/router/routes";
 import { cpfMask } from "~/utils/cpfMask";
 import * as S from "./styles";
