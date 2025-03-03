@@ -1,15 +1,16 @@
 import * as S from "./styles";
-import RegistrationCard from "../RegistrationCard";
+import { RegistrationCard } from "../RegistrationCard";
 import { Skeleton } from "~/components/Skeleton";
 import { type CollumnsProps } from "./types";
+import { Status } from "~/types";
 
 const allColumns = [
-  { status: "REVIEW", title: "Pronto para revisar" },
-  { status: "APPROVED", title: "Aprovado" },
-  { status: "REPROVED", title: "Reprovado" },
+  { status: Status.REVIEW, title: "Pronto para revisar" },
+  { status: Status.APPROVED, title: "Aprovado" },
+  { status: Status.REPROVED, title: "Reprovado" },
 ];
 
-const Collumns = ({ registrations, isLoading }: CollumnsProps) => {
+export const Collumns = ({ registrations, isLoading }: CollumnsProps) => {
   return (
     <S.Container>
       {allColumns.map((collum) => {
@@ -40,4 +41,3 @@ const Collumns = ({ registrations, isLoading }: CollumnsProps) => {
     </S.Container>
   );
 };
-export default Collumns;
