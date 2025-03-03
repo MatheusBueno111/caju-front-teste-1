@@ -1,19 +1,11 @@
 {
   "registrations": [
     {
-      "admissionDate": "22/10/2023",
-      "email": "luiz@caju.com.br",
-      "employeeName": "Luiz Filho",
-      "status": "APROVED",
-      "cpf": "56642105087",
-      "id": "3"
-    },
-    {
       "id": "1",
       "admissionDate": "22/10/2023",
       "email": "filipe@caju.com.br",
       "employeeName": "Filipe Marins",
-      "status": "REVIEW",
+      "status": "REPROVED",
       "cpf": "78502270001"
     },
     {
@@ -21,8 +13,64 @@
       "admissionDate": "22/10/2023",
       "email": "jose@caju.com.br",
       "employeeName": "José Leão",
-      "status": "REPROVED",
+      "status": "REVIEW",
       "cpf": "78502270001"
+    },
+    {
+      "id": "4",
+      "admissionDate": "15/10/2023",
+      "email": "ana@caju.com.br",
+      "employeeName": "Ana Souza",
+      "status": "REPROVED",
+      "cpf": "12345678900"
+    },
+    {
+      "id": "5",
+      "admissionDate": "18/10/2023",
+      "email": "maria@caju.com.br",
+      "employeeName": "Maria Silva",
+      "status": "REJECTED",
+      "cpf": "98765432100"
+    },
+    {
+      "id": "6",
+      "admissionDate": "20/10/2023",
+      "email": "joao@caju.com.br",
+      "employeeName": "João Almeida",
+      "status": "APPROVED",
+      "cpf": "11223344556"
+    },
+    {
+      "id": "7",
+      "admissionDate": "22/10/2023",
+      "email": "carlos@caju.com.br",
+      "employeeName": "Carlos Pereira",
+      "status": "REPROVED",
+      "cpf": "22334455667"
+    },
+    {
+      "id": "8",
+      "admissionDate": "19/10/2023",
+      "email": "juliana@caju.com.br",
+      "employeeName": "Juliana Costa",
+      "status": "APPROVED",
+      "cpf": "33445566778"
+    },
+    {
+      "id": "9",
+      "admissionDate": "21/10/2023",
+      "email": "pedro@caju.com.br",
+      "employeeName": "Pedro Rocha",
+      "status": "APPROVED",
+      "cpf": "44556677889"
+    },
+    {
+      "id": "10",
+      "admissionDate": "23/10/2023",
+      "email": "camila@caju.com.br",
+      "employeeName": "Camila Martins",
+      "status": "REVIEW",
+      "cpf": "55667788990"
     }
   ]
 }
