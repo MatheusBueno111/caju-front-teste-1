@@ -1,11 +1,11 @@
 import Collumns from "./components/Columns";
 import * as S from "./styles";
 import { SearchBar } from "./components/Searchbar";
-import { useGetRegistrations } from "~/hooks/useGetRegistrations/useGetRegistrations";
 import { useState } from "react";
 import { cpfRemoveMask } from "~/utils/cpfRemoveMask";
+import { useGetRegistrations } from "~/hooks/useRegistration";
 
-const DashboardPage = () => {
+export const DashboardPage = () => {
   const [search, setSearch] = useState("");
   const { registrations, isLoadingRegistrations, isRefetchingRegistrations } =
     useGetRegistrations(cpfRemoveMask(search));
@@ -24,4 +24,3 @@ const DashboardPage = () => {
     </S.Container>
   );
 };
-export default DashboardPage;

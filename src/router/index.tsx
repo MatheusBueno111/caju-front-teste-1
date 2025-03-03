@@ -1,9 +1,9 @@
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import routes from "./routes";
-import DashboardPage from "~/pages/Dashboard";
-import NewUserPage from "~/pages/NewUser";
+import { DashboardPage } from "~/pages/Dashboard";
+import { NewUserPage } from "~/pages/NewUser";
 
-const Router = () => {
+export const Router = () => {
   return (
     <div style={{ marginTop: 64 }}>
       <HashRouter>
@@ -24,5 +24,3 @@ const Router = () => {
     </div>
   );
 };
-
-export default Router;

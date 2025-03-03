@@ -4,7 +4,7 @@ export interface Registration {
   email: string;
   employeeName: string;
   id: string;
-  status: string;
+  status: Status;
 }
 
 export enum Status {

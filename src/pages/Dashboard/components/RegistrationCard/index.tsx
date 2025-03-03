@@ -5,23 +5,13 @@ import {
   HiOutlineCalendar,
   HiOutlineTrash,
 } from "react-icons/hi";
-import { usePatchStatusRegistration } from "~/hooks/usePatchStatusRegistration/usePatchStatusRegistration";
+import { useDeleteRegistration } from "~/hooks/useRegistration/useDeleteRegistration";
+import { usePatchStatusRegistration } from "~/hooks/useRegistration";
+import { type buttonMappingProps, type RegistrationCardProps } from "./types";
+import { Status } from "~/types";
 import * as S from "./styles";
-import { Status, type Registration } from "~/types";
-import { useDeleteRegistration } from "~/hooks/useDeleteRegistration";
 
-interface RegistrationCardProps {
-  registration: Registration;
-}
-
-interface buttonMappingProps {
-  label: string;
-  status: Status;
-  color: string;
-  isVisable: boolean;
-}
-
-const RegistrationCard = ({ registration }: RegistrationCardProps) => {
+export const RegistrationCard = ({ registration }: RegistrationCardProps) => {
   const { patchStatusRegistrationMutate } = usePatchStatusRegistration();
   const { deleteRegistrationMutate } = useDeleteRegistration();
 
@@ -88,5 +78,3 @@ const RegistrationCard = ({ registration }: RegistrationCardProps) => {
     </S.Card>
   );
 };
-
-export default RegistrationCard;
